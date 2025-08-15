@@ -4,6 +4,8 @@ services:
     ports:
       - ${HOST_PORT}:${HOST_PORT}
     env_file: .env
+    environment:
+      LOG_DIR: /app/logs
     volumes:
       - ./build/libs/recipefyapi-all.jar:/app/recipefy.jar
       - ./logs:/app/logs
