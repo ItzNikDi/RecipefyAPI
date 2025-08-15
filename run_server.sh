@@ -30,14 +30,16 @@ if [ ! -x gradlew ]; then
 fi
 
 echo "Building with Gradle..."
-./gradlew clean fatJar
+./gradlew clean buildFatJar
 
 echo "Creating log files..."
 mkdir -p logs
 touch logs/recipes.log logs/tokens.log
 
 echo "Running with Docker..."
-docker compose up -d
+docker compose up --wait
 
+echo
 echo "Success :)"
+echo
 docker ps
