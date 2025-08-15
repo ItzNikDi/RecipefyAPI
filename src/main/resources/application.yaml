@@ -1,0 +1,7 @@
+ktor:
+    application:
+        modules:
+            - nd.nikdi.ApplicationKt.module
+    deployment:
+        host: $HOST_URL
+        port: $HOST_PORT
