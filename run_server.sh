@@ -24,6 +24,11 @@ echo
 cat .env
 echo
 
+if [ ! -x gradlew ]; then
+  echo "Making gradlew executable..."
+  chmod +x gradlew
+fi
+
 echo "Building with Gradle..."
 ./gradlew clean fatJar
 
